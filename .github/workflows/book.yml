@@ -1,0 +1,40 @@
+name: deploy-book
+
+# Only run this when the master branch changes
+on:
+  push:
+    branches:
+    - master
+
+# This job installs dependencies, build the book, and pushes it to `gh-pages`
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.MY_REPO_PAT }}
+        submodules: recursive
+    
+    # Install dependencies
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.10
+    
+    - name: Install dependencies
+      run: |
+        sudo apt install -y build-essential gfortran liblapack-dev cmake
+        pip install --upgrade  -r requirements.txt
+        
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build ceaten
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.5.9
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./ceaten/_build/html

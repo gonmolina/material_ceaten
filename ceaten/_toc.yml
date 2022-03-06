@@ -1,0 +1,35 @@
+format: jb-book
+root: ceaten_sources/intro
+parts:
+- caption: "Introducción a Python"
+  chapters:
+  - file: notebooks_sources/guia_instalacion/guia_de_instalacion
+  - file: "notebooks_sources/intro_python/Introducci\xF3n a los notebooks de Jupyter"
+  - file: notebooks_sources/intro_python/Extra_Python
+  - file: notebooks_sources/intro_python/Intro-Matplotlib
+- caption: "Se\xF1ales, sistemas y modelos"
+  chapters:
+  - file: notebooks_sources/modulo1/intro_sys_sen/intro_sis_y_sen
+  - file: notebooks_sources/modulo1/laplace/transformada_laplace_python_opcional
+  - file: notebooks_sources/modulo1/laplace/funcion_transferencia
+  - file: notebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques
+- caption: "An\xE1lisis de la respuesta temporal"
+  chapters:
+  - file: notebooks_sources/modulo2/estabilidad/estabilidad
+  - file: notebooks_sources/modulo2/respuesta temporal/Respuesta Temporal
+  - file: notebooks_sources/modulo2/polos y ceros adicionales/Efecto Polos y Ceros Adicionales
+- caption: "An\xE1lisis de estado estacionario"
+  chapters:
+  - file: notebooks_sources/modulo3/realimentacion/carateristicas de la realimentacion
+  - file: notebooks_sources/modulo3/errores/Errores
+- caption: "Lugar de las ra\xEDces"
+  chapters:
+  - file: notebooks_sources/modulo4/lugar de las raices
+  - file: notebooks_sources/modulo4/Pasos para el trazado
+  - file: notebooks_sources/modulo4/Lugar de la raices con Python
+# - caption: "Dise\xF1o de compensadores"
+  # chapters:
+  # - file: notebooks_sources/modulo5/compensadores
+  # - file: notebooks_sources/modulo5/problema_levitador
+  # - file: notebooks_sources/modulo5/tipo1_lead
+  # - file: notebooks_sources/modulo5/lead_lag_design

@@ -1,0 +1,6 @@
+*.ipynb
+_build/
+.ipynb_checkpoints
+.vscode/
+material_recolectado/
+.markdownlint.json
