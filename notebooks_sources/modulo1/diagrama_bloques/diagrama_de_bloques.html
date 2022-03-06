@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagramas de bloques &#8212; Diseño de Sistemas de Control</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "gonmolina/material_ceaten");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../../../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://gonmolina.github.io/git material_ceaten/notebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques.html" />
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../../search.html" />
+    <link rel="next" title="Estabilidad" href="../../modulo2/estabilidad/estabilidad.html" />
+    <link rel="prev" title="Función transferencia" href="../laplace/funcion_transferencia.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="es">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../../_static/sala_de_control.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Diseño de Sistemas de Control</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../ceaten_sources/intro.html">
+   Material de la materia Elementos de Control de CEATEN 2022
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../guia_instalacion/guia_de_instalacion.html">
+   Guía de instalación de las herramientas computacionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro_python/Introducci%C3%B3n%20a%20los%20notebooks%20de%20Jupyter.html">
+   Introducción a los cuadernos de Jupyter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro_python/Extra_Python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro_python/Intro-Matplotlib.html">
+   Figuras en Python - MATPLOTLIB
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Señales, sistemas y modelos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro_sys_sen/intro_sis_y_sen.html">
+   Definiciones de Sistemas y Señales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/transformada_laplace_python_opcional.html">
+   Transformada de Laplace
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../laplace/funcion_transferencia.html">
+   Función transferencia
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Diagramas de bloques
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Análisis de la respuesta temporal
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo2/estabilidad/estabilidad.html">
+   Estabilidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo2/respuesta%20temporal/Respuesta%20Temporal.html">
+   Respuesta temporal de sistemas dinámicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo2/polos%20y%20ceros%20adicionales/Efecto%20Polos%20y%20Ceros%20Adicionales.html">
+   Efecto de los polos adicionales y de los ceros
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Análisis de estado estacionario
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo3/realimentacion/carateristicas%20de%20la%20realimentacion.html">
+   Características de la realimentación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo3/errores/Errores.html">
+   Errores
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lugar de las raíces
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo4/lugar%20de%20las%20raices.html">
+   Lugar de las raíces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo4/Pasos%20para%20el%20trazado.html">
+   Pasos para trazar el lugar geométrico de las raíces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../modulo4/Lugar%20de%20la%20raices%20con%20Python.html">
+   Lugar de las raíces usando Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../../_sources/notebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo de cuaderno" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/notebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/gonmolina/material_ceaten.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositorio de origen"><i
+                    class="fab fa-github"></i>repositorio</button></a>
+        <a class="issues-button"
+            href="https://github.com/gonmolina/material_ceaten.git/issues/new?title=Issue%20on%20page%20%2Fnotebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abrir un problema"><i class="fas fa-lightbulb"></i>Tema abierto</button></a>
+        <a class="edit-button" href="https://github.com/gonmolina/material_ceaten.git/edit/master/ceaten/notebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edita esta página"><i class="fas fa-pencil-alt"></i>sugerir editar</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/gonmolina/material_ceaten.git/master?urlpath=tree/ceaten/notebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagrama-de-bloques-concepto">
+   Diagrama de bloques: concepto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-sistema-de-control-representado-por-diagrama-de-bloques">
+     Ejemplo de sistema de control representado por diagrama de bloques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagramas-de-bloques-como-representacion-matematica">
+   Diagramas de bloques como representación matemática
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduccion-de-los-diagramas-de-bloques-usando-algebra-de-bloques">
+   Reducción de los diagramas de bloques usando algebra de bloques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bloques-en-serie">
+     Bloques en serie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bloques-en-paralelo">
+     Bloques en paralelo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sistema-realimentado">
+     Sistema realimentado
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#otras-transformaciones-utiles-en-el-algebra-de-diagramas-de-bloque">
+     Otras transformaciones útiles en el algebra de diagramas de bloque
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-diagrama-de-bloques">
+     Ejemplo de diagrama de bloques
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#resolucion-a-mano">
+       Resolución a mano
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Diagramas de bloques</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contenido </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagrama-de-bloques-concepto">
+   Diagrama de bloques: concepto
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-sistema-de-control-representado-por-diagrama-de-bloques">
+     Ejemplo de sistema de control representado por diagrama de bloques
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagramas-de-bloques-como-representacion-matematica">
+   Diagramas de bloques como representación matemática
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduccion-de-los-diagramas-de-bloques-usando-algebra-de-bloques">
+   Reducción de los diagramas de bloques usando algebra de bloques
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bloques-en-serie">
+     Bloques en serie
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bloques-en-paralelo">
+     Bloques en paralelo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sistema-realimentado">
+     Sistema realimentado
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#otras-transformaciones-utiles-en-el-algebra-de-diagramas-de-bloque">
+     Otras transformaciones útiles en el algebra de diagramas de bloque
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-diagrama-de-bloques">
+     Ejemplo de diagrama de bloques
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#resolucion-a-mano">
+       Resolución a mano
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="diagramas-de-bloques">
+<h1>Diagramas de bloques<a class="headerlink" href="#diagramas-de-bloques" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="diagrama-de-bloques-concepto">
+<h2>Diagrama de bloques: concepto<a class="headerlink" href="#diagrama-de-bloques-concepto" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Una forma esquemática de representar los sistemas de control es a través de los diagramas de bloques. En dicho diagrama identificamos los principales componentes como bloques, omitiendo detalles y mostrando la dirección principal de la información y la relación de causalidad entre componente y otro.</p>
+<p>En la siguiente figura podemos ver el diagrama de bloques genérico del sistema de control realimentado.</p>
+<div class="figure align-center" id="diagrama-general">
+<a class="reference internal image-reference" href="../../../_images/fig1.png"><img alt="Diagrama de control general de sistema controlado" src="../../../_images/fig1.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Figura 14 </span><span class="caption-text">Diagrama de control general de sistema controlado</span><a class="headerlink" href="#diagrama-general" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Decimos que este sistema está realimentado, por que podemos ver que usamos la salida, que para este caso en particular es la medición de temperatura, para calcular y/o modificar la entrada al sistema. En este diagrama de bloques el resultado del sensor de salida se compara, mediante una resta con el sensor de la referencia.</p>
+<div class="section" id="ejemplo-de-sistema-de-control-representado-por-diagrama-de-bloques">
+<h3>Ejemplo de sistema de control representado por diagrama de bloques<a class="headerlink" href="#ejemplo-de-sistema-de-control-representado-por-diagrama-de-bloques" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Sn la siguiente figura mostramos como ejemplo de diagrama de bloques el sistema de control de una caldera controlado por un termostato.</p>
+<div class="figure align-center" id="control-general">
+<a class="reference internal image-reference" href="../../../_images/fig2.png"><img alt="Sistema de control general" src="../../../_images/fig2.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Figura 15 </span><span class="caption-text">Diagrama de control de temperatura</span><a class="headerlink" href="#control-general" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="diagramas-de-bloques-como-representacion-matematica">
+<h2>Diagramas de bloques como representación matemática<a class="headerlink" href="#diagramas-de-bloques-como-representacion-matematica" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los diagramas de bloques, no solo pueden ser conceptuales, sino que también pueden ser usados para representar matemáticamente los sistemas.</p>
+<p>En un diagrama de bloques cada bloque del diagrama representa matemáticamente una parte del sistema, y las lineas son las señales de entrada y de salida de cada una de las partes del sistema. Así el sistema es dividido en subsistemas más pequeños y fáciles de resolver.</p>
+</div>
+<div class="section" id="reduccion-de-los-diagramas-de-bloques-usando-algebra-de-bloques">
+<h2>Reducción de los diagramas de bloques usando algebra de bloques<a class="headerlink" href="#reduccion-de-los-diagramas-de-bloques-usando-algebra-de-bloques" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Podemos encontrar diversos sistemas de control, representados con diagramas de bloques complejos. Dichos diagramas los podemos reducir a un simple bloque empleando las reglas del algebra de bloques.</p>
+<p>A continuación demostraremos estas reglas mediante operaciones algebraicas.</p>
+<div class="section" id="bloques-en-serie">
+<h3>Bloques en serie<a class="headerlink" href="#bloques-en-serie" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="figure align-center" id="bloques-serie">
+<img alt="BLoques en serie" src="../../../_images/fig3.png" />
+<p class="caption"><span class="caption-number">Figura 16 </span><span class="caption-text">Bloques en serie</span><a class="headerlink" href="#bloques-serie" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="math notranslate nohighlight">
+\[ G(s) = \frac{Y(s)}{U(s)} = \frac{G2(s).X(s)}{U(s)} = \frac{G2(s).(G1(s).U(s))}{U(s)} = {G1(s).G2(s)} \]</div>
+</div>
+<div class="section" id="bloques-en-paralelo">
+<h3>Bloques en paralelo<a class="headerlink" href="#bloques-en-paralelo" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="figure align-center" id="bloques-paralelo">
+<img alt="Bloques en paralelo" src="../../../_images/fig4.png" />
+<p class="caption"><span class="caption-number">Figura 17 </span><span class="caption-text">Bloques en serie</span><a class="headerlink" href="#bloques-paralelo" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="math notranslate nohighlight">
+\[ G = \frac{Y(s)}{U(s)} = \frac{X1(s)+X2(s)}{U(s)} = \frac{G1(s).U(s)+G2(s).U(s)}{U(s)} = \frac{(G1(s)+G2(s)).U(s)}{U(s)} = G1(s) + G2(s) \]</div>
+</div>
+<div class="section" id="sistema-realimentado">
+<h3>Sistema realimentado<a class="headerlink" href="#sistema-realimentado" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[X1(s)  = U(s) - X2(s) = U(s) - Y(s).G2(s) \]</div>
+<div class="math notranslate nohighlight">
+\[Y(s) = X1(s).G1(s) = \left(U(s) - Y(s).G2(s)\right).G1(s) = U(s).G1(s) - Y(s).G2(s).G1(s)\]</div>
+<div class="math notranslate nohighlight">
+\[Y.(1+G1(s).G2(s)) = U(s).G1(s)\]</div>
+<div class="math notranslate nohighlight">
+\[G = \frac{Y(s)}{U(s)} =\frac{G1(s)}{(1+G1(s).G2(s))}\]</div>
+<div class="figure align-center" id="bloques-realimentados">
+<img alt="Bloques realimentados" src="../../../_images/fig5.png" />
+<p class="caption"><span class="caption-number">Figura 18 </span><span class="caption-text">Bloques realimentados</span><a class="headerlink" href="#bloques-realimentados" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+</div>
+<div class="section" id="otras-transformaciones-utiles-en-el-algebra-de-diagramas-de-bloque">
+<h3>Otras transformaciones útiles en el algebra de diagramas de bloque<a class="headerlink" href="#otras-transformaciones-utiles-en-el-algebra-de-diagramas-de-bloque" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="figure align-center" id="transformaciones-utiles">
+<img alt="transformaciones útiles" src="../../../_images/fig6.png" />
+<p class="caption"><span class="caption-number">Figura 19 </span><span class="caption-text">Transformaciones útiles</span><a class="headerlink" href="#transformaciones-utiles" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+</div>
+<div class="section" id="ejemplo-de-diagrama-de-bloques">
+<h3>Ejemplo de diagrama de bloques<a class="headerlink" href="#ejemplo-de-diagrama-de-bloques" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Tenemos el diagrama de bloques de la figura, el cual queremos reducir.</p>
+<div class="figure align-center" id="ejemplo1">
+<img alt="ejemplo" src="../../../_images/fig7.png" />
+<p class="caption"><span class="caption-number">Figura 20 </span><span class="caption-text">Ejemplo de simplificación de diagrama de bloques</span><a class="headerlink" href="#ejemplo1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="section" id="resolucion-a-mano">
+<h4>Resolución a mano<a class="headerlink" href="#resolucion-a-mano" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>En las siguientes dos figuras mostramos dos reducciones sucesivas al diagrama del ejemplo.</p>
+<div class="figure align-center" id="primer-paso">
+<img alt="primer-paso" src="../../../_images/fig8.png" />
+<p class="caption"><span class="caption-number">Figura 21 </span><span class="caption-text">Primer paso de simplificación</span><a class="headerlink" href="#primer-paso" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<div class="figure align-center" id="segundo-paso">
+<img alt="segundo-paso" src="../../../_images/fig9.png" />
+<p class="caption"><span class="caption-number">Figura 22 </span><span class="caption-text">Segundo paso de simplificación</span><a class="headerlink" href="#segundo-paso" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<p>Finalmente, en la siguiente figura obtenemos la función de transferencia <span class="math notranslate nohighlight">\(G(s) = \dfrac{Y(s)}{R(s)}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ G(s) = \dfrac{Y(s)}{R(s)}=\dfrac{\dfrac{G_1.G_2}{1-G_1.G_3}}{1+\dfrac{G_1G_2G_4}{1-G_1G_3}}\left(G_5+\frac{G_6}{G_2}\right)\]</div>
+<div class="math notranslate nohighlight">
+\[ G(s)=\dfrac{G_1G_2G_5+G_1G_6}{1-G_1G_3+G_1G_2G_4} \]</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks_sources/modulo1/diagrama_bloques"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../laplace/funcion_transferencia.html" title="anterior página">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">anterior</p>
+            <p class="prev-next-title">Función transferencia</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../modulo2/estabilidad/estabilidad.html" title="siguiente página">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Estabilidad</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      Por Dr. Ing. Gonzalo Molina; Ing. Juan Pablo Pierini<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
