@@ -1,2 +1,4 @@
 .vscode/
 out_of_repo/
+.ipynb_checkpoints/
+*.ipynb
