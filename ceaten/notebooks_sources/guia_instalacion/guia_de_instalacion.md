@@ -55,3 +55,21 @@ Luego debe contestar Si a Todo. Ahora podremos cerrar la consola de PowerShell c
 
 Una vez terminado este paso tendremos instaladas todas las herramientas necesarias para la materia. Es necesario tener paciencia ya que este paso puede tardar un tiempo largo dependiendo de la velocidad de conexión. 
 
+### Crear acceso directo a Jupyter Lab
+
+Una vez instaladas todas las herramientas podremos utilizar `jupyter-lab` abreindo la consola de Anaconda Powershell y ejecutando el siguiente comando:
+
+```powershell	
+conda activate eecc
+jupyter lab
+```
+
+Para algunas personas no habituadas a utilizar la consola de comandos esto puede resultar engorroso. Para simplificar esto podemos generar un enlace directo a Jupyter Lab en el escritorio.Los pasos para hacerlo son los siguientes:
+
+1. Sobre el escritorio hacer click con el botón secundario y seleccionar `Nuevo > Acceso directo`.
+1. Escribir `%windir%\System32\cmd.exe "/K"  C:\Users\%username%\Miniconda3\Scripts\activate.bat eecc &&  jupyter-lab && exit` donde se pide la `Ubicación del elemento`.
+1. Escribir `JupyterLab` donde se pide el nombre del elemento. Luego de esto el enlace debería estar funcionando. Sin embargo, podemos personalizarlo un poco más.
+1. Hacemos click secundario sobre el Enlace recién creado y seleccionamos `Propiedades`. Donde está el campo `Iniciar en:` escribimos la ruta de la carpeta donde guardamos todos los cuadernos, por ejemplo `C:\Users\%username%\Documents\elementos_de_control`. De esta forma no será necesario navegar hasta la ruta donde se encuentran los cuadernos cada vez que se abre el Jupyter Lab (o al menos estaremos más cerca).
+1. Podemos también cambiar el ícono que se muestra en el escritorio. Para esto podemos descargar este [archivo](https://raw.githubusercontent.com/jupyter/design/master/logos/Favicon/favicon.ico) y luego continuamos la edición de las propiedades del enlace. Seleccionamos la opción `Cambiar icono` y seleccionamos el archivo que acabamos de descargar.
+
+Ahora deberíamos tener un acceso directo a Jupyter Lab en el escritorio. 
