@@ -370,6 +370,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#instalacion-de-las-herramientas-especificas-del-curso">
    Instalación de las herramientas especificas del curso
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#crear-acceso-directo-a-jupyter-lab">
+     Crear acceso directo a Jupyter Lab
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -422,6 +429,13 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#instalacion-de-las-herramientas-especificas-del-curso">
    Instalación de las herramientas especificas del curso
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#crear-acceso-directo-a-jupyter-lab">
+     Crear acceso directo a Jupyter Lab
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -479,6 +493,23 @@ que se llama <strong>Anaconda Powershell Prompt</strong>, el cual abriremos para
 <p>Luego debe contestar Si a Todo. Ahora podremos cerrar la consola de PowerShell como Administrador y continuar con la instalación.</p>
 </div>
 <p>Una vez terminado este paso tendremos instaladas todas las herramientas necesarias para la materia. Es necesario tener paciencia ya que este paso puede tardar un tiempo largo dependiendo de la velocidad de conexión.</p>
+<div class="section" id="crear-acceso-directo-a-jupyter-lab">
+<h3>Crear acceso directo a Jupyter Lab<a class="headerlink" href="#crear-acceso-directo-a-jupyter-lab" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Una vez instaladas todas las herramientas podremos utilizar <code class="docutils literal notranslate"><span class="pre">jupyter-lab</span></code> abreindo la consola de Anaconda Powershell y ejecutando el siguiente comando:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">eecc</span>
+<span class="n">jupyter</span> <span class="n">lab</span>
+</pre></div>
+</div>
+<p>Para algunas personas no habituadas a utilizar la consola de comandos esto puede resultar engorroso. Para simplificar esto podemos generar un enlace directo a Jupyter Lab en el escritorio.Los pasos para hacerlo son los siguientes:</p>
+<ol class="simple">
+<li><p>Sobre el escritorio hacer click con el botón secundario y seleccionar <code class="docutils literal notranslate"><span class="pre">Nuevo</span> <span class="pre">&gt;</span> <span class="pre">Acceso</span> <span class="pre">directo</span></code>.</p></li>
+<li><p>Escribir <code class="docutils literal notranslate"><span class="pre">%windir%\System32\cmd.exe</span> <span class="pre">&quot;/K&quot;</span>&#160; <span class="pre">C:\Users\%username%\Miniconda3\Scripts\activate.bat</span> <span class="pre">eecc</span> <span class="pre">&amp;&amp;</span>&#160; <span class="pre">jupyter-lab</span> <span class="pre">&amp;&amp;</span> <span class="pre">exit</span></code> donde se pide la <code class="docutils literal notranslate"><span class="pre">Ubicación</span> <span class="pre">del</span> <span class="pre">elemento</span></code>.</p></li>
+<li><p>Escribir <code class="docutils literal notranslate"><span class="pre">JupyterLab</span></code> donde se pide el nombre del elemento. Luego de esto el enlace debería estar funcionando. Sin embargo, podemos personalizarlo un poco más.</p></li>
+<li><p>Hacemos click secundario sobre el Enlace recién creado y seleccionamos <code class="docutils literal notranslate"><span class="pre">Propiedades</span></code>. Donde está el campo <code class="docutils literal notranslate"><span class="pre">Iniciar</span> <span class="pre">en:</span></code> escribimos la ruta de la carpeta donde guardamos todos los cuadernos, por ejemplo <code class="docutils literal notranslate"><span class="pre">C:\Users\%username%\Documents\elementos_de_control</span></code>. De esta forma no será necesario navegar hasta la ruta donde se encuentran los cuadernos cada vez que se abre el Jupyter Lab (o al menos estaremos más cerca).</p></li>
+<li><p>Podemos también cambiar el ícono que se muestra en el escritorio. Para esto podemos descargar este <a class="reference external" href="https://raw.githubusercontent.com/jupyter/design/master/logos/Favicon/favicon.ico">archivo</a> y luego continuamos la edición de las propiedades del enlace. Seleccionamos la opción <code class="docutils literal notranslate"><span class="pre">Cambiar</span> <span class="pre">icono</span></code> y seleccionamos el archivo que acabamos de descargar.</p></li>
+</ol>
+<p>Ahora deberíamos tener un acceso directo a Jupyter Lab en el escritorio.</p>
+</div>
 </div>
 </div>
 
