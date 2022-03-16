@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://gonmolina.github.io/git material_ceaten/notebooks_sources/modulo4/lugar de las raices.html" />
@@ -517,7 +517,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Muchos problemas de control consisten en analizar la respuesta de un sistema cuando varía un parámetro <span class="math notranslate nohighlight">\(k\)</span> de la función de transferencia del sistema.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/fig13.png"><img alt="fig1.png" src="../../_images/fig13.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Figura 39 </span><span class="caption-text">Diagrama en bloques de un sistema con un parámetro variable <span class="math notranslate nohighlight">\(k\)</span></span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 41 </span><span class="caption-text">Diagrama en bloques de un sistema con un parámetro variable <span class="math notranslate nohighlight">\(k\)</span></span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Un ejemplo de esto son las funciones de transferencia siguientes, donde en un caso de <span class="math notranslate nohighlight">\(G_1(s)\)</span> el parámetro que varía es el parámetro <span class="math notranslate nohighlight">\(k\)</span> y en el caso de de <span class="math notranslate nohighlight">\(G_2(s)\)</span> el parámetro que varía es <span class="math notranslate nohighlight">\(b\)</span></p>
 <div class="math notranslate nohighlight">
@@ -528,7 +528,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 \]</div>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/fig21.png"><img alt="fig2.png" src="../../_images/fig21.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Figura 40 </span><span class="caption-text">Diagrama en bloques de los sistema <span class="math notranslate nohighlight">\(G_1(s)\)</span> y <span class="math notranslate nohighlight">\(G_2(s)\)</span></span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 42 </span><span class="caption-text">Diagrama en bloques de los sistema <span class="math notranslate nohighlight">\(G_1(s)\)</span> y <span class="math notranslate nohighlight">\(G_2(s)\)</span></span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Una solución práctica a este problema es evaluar el parámetro variable para distintos valores fijos y de esa forma calcular la ubicación en el plano s, de los polos y ceros, para deducir la respuesta temporal del sistema.</p>
 <p>Y si lo anterior se pudiera hacer para todos los valores de <span class="math notranslate nohighlight">\(\ell \in \mathbb{R}\)</span>!. Bueno aquí, es donde entra Walter R. Evans y el «Método de Evans», que permite resolver en forma <strong>gráfica</strong> las funciones del tipo <span class="math notranslate nohighlight">\(1+\ell~F(s)=0\)</span> donde <span class="math notranslate nohighlight">\(F(s)\)</span> es una función de transferencia de la forma <span class="math notranslate nohighlight">\(F(s)= \frac{N(s)}{D(s)}\)</span> y <span class="math notranslate nohighlight">\(\ell \in \mathbb{R}\)</span>, notar que de lo anterior es posible expresar lo de la forma <span class="math notranslate nohighlight">\(D(s)+\ell~N(s)=0\)</span>. A estos gráficos o diagramas, en control, les llamamos Lugar de las raíces o en ingles Root Locus.</p>
@@ -536,12 +536,12 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 <p>Para comenzaremos a responder estas preguntas, analizaremos el siguiente esquema «genérico» de control a lazo cerrado del sistema de la figura siguiente, donde <span class="math notranslate nohighlight">\(k D(s)\)</span> es el controlador del sistema con ganancia <span class="math notranslate nohighlight">\(k\)</span>, como parámetro variable, en principio comenzaremos con <span class="math notranslate nohighlight">\(k&gt;0\)</span>, pero si bien, en la mayoría de los problemas que veremos <span class="math notranslate nohighlight">\(k\)</span> es positivo,no hay restricciones con respecto a al valor de <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../../_images/fig31.png"><img alt="fig3.png" src="../../_images/fig31.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 41 </span><span class="caption-text">Sistema genérico a lazo cerrado</span><a class="headerlink" href="#id3" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 43 </span><span class="caption-text">Sistema genérico a lazo cerrado</span><a class="headerlink" href="#id3" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>El diagrama en bloques equivalente, se reduce a:</p>
 <div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../../_images/fig42.png"><img alt="fig4.png" src="../../_images/fig42.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Figura 42 </span><span class="caption-text">Diagrama equivalente del sistema a lazo cerrado</span><a class="headerlink" href="#id4" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 44 </span><span class="caption-text">Diagrama equivalente del sistema a lazo cerrado</span><a class="headerlink" href="#id4" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>La función de transferencia a lazo cerrado es:</p>
 <div class="math notranslate nohighlight">
@@ -611,7 +611,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 <p>Veremos la representación vectorial de números complejos, para lo que partiremos de número complejo <span class="math notranslate nohighlight">\(\overrightarrow{s}= \sigma + j \omega\)</span>, cuya representación vectorial es la siguiente:</p>
 <div class="figure align-default" id="id5">
 <a class="reference internal image-reference" href="../../_images/fig52.png"><img alt="fig5.png" src="../../_images/fig52.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Figura 43 </span><span class="caption-text">Vector <span class="math notranslate nohighlight">\(\overrightarrow{s}= \sigma + j \omega\)</span></span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 45 </span><span class="caption-text">Vector <span class="math notranslate nohighlight">\(\overrightarrow{s}= \sigma + j \omega\)</span></span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>donde,</p>
 <div class="math notranslate nohighlight">
@@ -621,7 +621,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 <p>ahora consideremos que tenemos el vector <span class="math notranslate nohighlight">\(\overrightarrow{v} = \overrightarrow{s} + a\)</span> con <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> y <span class="math notranslate nohighlight">\(\overrightarrow{s} = \sigma + j \omega \in \mathbb{C}\)</span>, la traslación de <span class="math notranslate nohighlight">\(\overrightarrow{s}\)</span>, cuya representación es:</p>
 <div class="figure align-default" id="id6">
 <a class="reference internal image-reference" href="../../_images/fig62.png"><img alt="fig6.png" src="../../_images/fig62.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 44 </span><span class="caption-text">Vector <span class="math notranslate nohighlight">\(\overrightarrow{v}\)</span></span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 46 </span><span class="caption-text">Vector <span class="math notranslate nohighlight">\(\overrightarrow{v}\)</span></span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>en general, podemos decir que si que si tenemos la función de transferencia <span class="math notranslate nohighlight">\(F(s)\)</span> donde <span class="math notranslate nohighlight">\(s\)</span> es la variable compleja y con polos y ceros, tal que:</p>
 <div class="math notranslate nohighlight">
@@ -647,7 +647,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 \[F(s_0)= \frac{1}{2} \angle{-180º}\]</div>
 <div class="figure align-default" id="id7">
 <a class="reference internal image-reference" href="../../_images/fig72.png"><img alt="fig7.png" src="../../_images/fig72.png" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Figura 45 </span><span class="caption-text">Módulo y argumento de <span class="math notranslate nohighlight">\(F(s_0)\)</span></span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 47 </span><span class="caption-text">Módulo y argumento de <span class="math notranslate nohighlight">\(F(s_0)\)</span></span><a class="headerlink" href="#id7" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="ejemplo-trazado-del-lugar-de-las-raices">
@@ -655,7 +655,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 <p>En el siguiente ejemplo mostraremos la ubicación de los polos de <span class="math notranslate nohighlight">\(G(s)\)</span> para distintos valores de la variable <span class="math notranslate nohighlight">\(k\)</span>, consideraremos <span class="math notranslate nohighlight">\(k&gt;0\)</span>, cuando se cierra el lazo con realimentación unitaria, como se muestra en la siguiente figura:</p>
 <div class="figure align-default" id="id8">
 <a class="reference internal image-reference" href="../../_images/fig82.png"><img alt="fig8.png" src="../../_images/fig82.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 46 </span><span class="caption-text"><span class="math notranslate nohighlight">\(G(s)\)</span> a lazo cerrado con un controlador proporcional <span class="math notranslate nohighlight">\(D(s)=k\)</span></span><a class="headerlink" href="#id8" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 48 </span><span class="caption-text"><span class="math notranslate nohighlight">\(G(s)\)</span> a lazo cerrado con un controlador proporcional <span class="math notranslate nohighlight">\(D(s)=k\)</span></span><a class="headerlink" href="#id8" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>entonces calculamos la función de transferencia a lazo cerrado <span class="math notranslate nohighlight">\(T(s)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -700,7 +700,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 </table>
 <div class="figure align-default" id="id9">
 <a class="reference internal image-reference" href="../../_images/fig92.png"><img alt="fig9.png" src="../../_images/fig92.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 47 </span><span class="caption-text">Lugar de las raíces de <span class="math notranslate nohighlight">\(G(s)\)</span></span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 49 </span><span class="caption-text">Lugar de las raíces de <span class="math notranslate nohighlight">\(G(s)\)</span></span><a class="headerlink" href="#id9" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="propiedades-de-el-lugar-de-las-raices">
@@ -752,7 +752,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 \[G(s)=\frac{s+1}{s\left\{\left[\left(s+2\right)^2+4\right]\left(s+4\right)\right\}}\]</div>
 <div class="figure align-default" id="id10">
 <a class="reference internal image-reference" href="../../_images/fig101.png"><img alt="fig10.png" src="../../_images/fig101.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 48 </span><span class="caption-text"><span class="math notranslate nohighlight">\(G(s)\)</span> en un punto del plano-s genérico <span class="math notranslate nohighlight">\(s_0\)</span></span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 50 </span><span class="caption-text"><span class="math notranslate nohighlight">\(G(s)\)</span> en un punto del plano-s genérico <span class="math notranslate nohighlight">\(s_0\)</span></span><a class="headerlink" href="#id10" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>En la figura anterior mostramos con cruces la ubicación de los polos de esta función de transferencia, y con círculos los ceros. Suponemos un punto de prueba ubicado en <span class="math notranslate nohighlight">\( s_o = -1 + 2j \)</span>, y realizamos la suma de las contribuciones de las fases para determinar si es o no punto del lugar de raíces:</p>
 <div class="math notranslate nohighlight">
@@ -800,7 +800,7 @@ G_1(s)= \frac{k(s+20)}{s^2+10s} &amp; G_2(s)=\frac{1}{2s^2+bs+3}
 <p>Elegimos un punto de prueba en <span class="math notranslate nohighlight">\(-0.667 \pm 2j\)</span>, que pertenece al lugar geométrico de las raíces, pues ese punto cumple con ciertos requerimientos para nuestro sistema de control.</p>
 <div class="figure align-default" id="id11">
 <a class="reference internal image-reference" href="../../_images/fig111.png"><img alt="fig11.png" src="../../_images/fig111.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 49 </span><span class="caption-text"><span class="math notranslate nohighlight">\(G(s)\)</span> en un punto del plano-<span class="math notranslate nohighlight">\(s\)</span> genérico <span class="math notranslate nohighlight">\(s_0\)</span></span><a class="headerlink" href="#id11" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 51 </span><span class="caption-text"><span class="math notranslate nohighlight">\(G(s)\)</span> en un punto del plano-<span class="math notranslate nohighlight">\(s\)</span> genérico <span class="math notranslate nohighlight">\(s_0\)</span></span><a class="headerlink" href="#id11" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Entonces determinamos la ganancia <span class="math notranslate nohighlight">\(K\)</span> para llegar a ese punto como:</p>
 <div class="math notranslate nohighlight">

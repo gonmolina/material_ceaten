@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://gonmolina.github.io/git material_ceaten/notebooks_sources/modulo3/errores/Errores.html" />
@@ -654,14 +654,14 @@ E(s)= R(s)-Y(s)
 <p>Dicho error tendrá un transitorio, y luego llegará a un estacionario al cual se lo denomina error de estado estacionario.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../../_images/fig4.gif"><img alt="../../../_images/fig4.gif" src="../../../_images/fig4.gif" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 35 </span><span class="caption-text">Diagrama genérico para errores en estado estacionario</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 37 </span><span class="caption-text">Diagrama genérico para errores en estado estacionario</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="section" id="caso-especial-realimentacion-unitaria-y-constantes-de-error">
 <h3>Caso especial: Realimentación unitaria y constantes de error<a class="headerlink" href="#caso-especial-realimentacion-unitaria-y-constantes-de-error" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>Si <span class="math notranslate nohighlight">\(H = I\)</span>, podemos modelar el sistema con realimentación unitaria como muestra la siguiente figura.</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../../_images/fig5.gif"><img alt="../../../_images/fig5.gif" src="../../../_images/fig5.gif" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Figura 36 </span><span class="caption-text">Diagrama particular con <span class="math notranslate nohighlight">\(H(s)\)</span>=1 y <span class="math notranslate nohighlight">\(G(s) = I(s)D(s)G_p(s)\)</span>.</span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 38 </span><span class="caption-text">Diagrama particular con <span class="math notranslate nohighlight">\(H(s)\)</span>=1 y <span class="math notranslate nohighlight">\(G(s) = I(s)D(s)G_p(s)\)</span>.</span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Entonces tendremos:</p>
 <div class="math notranslate nohighlight">
@@ -949,7 +949,7 @@ Siguiendo la nomenclatura tenemos que:</p>
 <p>Supongamos ahora que tenemos un sistema de la forma que se ve en la siguiente figura (<strong>notar el cambio de notación</strong>):</p>
 <div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../../../_images/close_loop_with_disturbance.png"><img alt="../../../_images/close_loop_with_disturbance.png" src="../../../_images/close_loop_with_disturbance.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Figura 37 </span><span class="caption-text">Sistema a lazo cerrado con perturbaciones</span><a class="headerlink" href="#id3" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 39 </span><span class="caption-text">Sistema a lazo cerrado con perturbaciones</span><a class="headerlink" href="#id3" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Si queremos analizar como se comporta el error del sistema frente a una perturbación <span class="math notranslate nohighlight">\(W(s)\)</span>, vamos a pensar que la referencia <span class="math notranslate nohighlight">\(r(t)\)</span> se mantiene en 0. Además para este curso no se va a tener en cuenta el ruido de medición <span class="math notranslate nohighlight">\(v(t)\)</span>. Así <span class="math notranslate nohighlight">\(V(s)=0\)</span> y <span class="math notranslate nohighlight">\(R(s)=0\)</span>.</p>
 <p>Por lo tanto, recordando que <span class="math notranslate nohighlight">\(E(s) = R(s)-Y(s)\)</span>.</p>
@@ -978,7 +978,7 @@ y_{ss} &amp; = \lim_{s\rightarrow 0 } \left[ sT_w(s)\frac{1}{s^{k+1}}\right]\\
 <p>Considerar el modelo simplificado del motor de corriente continua con realimentacion unitaria como se muestra en la figura:</p>
 <div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../../../_images/motor_dc_simplified.png"><img alt="../../../_images/motor_dc_simplified.png" src="../../../_images/motor_dc_simplified.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Figura 38 </span><span class="caption-text">Motor simplificado a lazo cerrado con perturbaciones</span><a class="headerlink" href="#id4" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 40 </span><span class="caption-text">Motor simplificado a lazo cerrado con perturbaciones</span><a class="headerlink" href="#id4" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Analizar el tipo de sistema para las referencias <span class="math notranslate nohighlight">\(R(s)\)</span> y para las perturbaciones <span class="math notranslate nohighlight">\(W(w)\)</span> para el sistema de la figura anterior. Suponiendo que <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span> son constantes y que:</p>
 <ol class="simple">

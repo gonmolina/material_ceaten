@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="canonical" href="https://gonmolina.github.io/git material_ceaten/notebooks_sources/guia_instalacion/guia_de_instalacion.html" />
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
@@ -378,6 +378,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nuevo-aplicacion-jupyterlab-de-escritorio">
+   NUEVO! Aplicación JupyterLab de escritorio
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -436,6 +441,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nuevo-aplicacion-jupyterlab-de-escritorio">
+   NUEVO! Aplicación JupyterLab de escritorio
+  </a>
  </li>
 </ul>
 
@@ -509,6 +519,32 @@ que se llama <strong>Anaconda Powershell Prompt</strong>, el cual abriremos para
 <li><p>Podemos también cambiar el ícono que se muestra en el escritorio. Para esto podemos descargar este <a class="reference external" href="https://raw.githubusercontent.com/jupyter/design/master/logos/Favicon/favicon.ico">archivo</a> y luego continuamos la edición de las propiedades del enlace. Seleccionamos la opción <code class="docutils literal notranslate"><span class="pre">Cambiar</span> <span class="pre">icono</span></code> y seleccionamos el archivo que acabamos de descargar.</p></li>
 </ol>
 <p>Ahora deberíamos tener un acceso directo a Jupyter Lab en el escritorio.</p>
+</div>
+</div>
+<div class="section" id="nuevo-aplicacion-jupyterlab-de-escritorio">
+<h2>NUEVO! Aplicación JupyterLab de escritorio<a class="headerlink" href="#nuevo-aplicacion-jupyterlab-de-escritorio" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Recientemente se lanzó una nueva aplicación JupyterLab de escritorio. Esta aplicación crea un lanzador desde el menu de inicio en windows y se pueden abrir los Notebooks con esta aplicación directamente desde el explorador de archivos. Para instalarlos de debe descargar el siguiente <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-desktop/releases/latest/download/JupyterLab-Setup-Windows.exe">instalador</a> y ejecutarlo.</p>
+<p>Para poder visualizar correctamente los cuadernos del curso será necesario instalar dos paquetes de Python extra. Para esto, po única vez cuando se abra la aplicación JupyterLab se de hacer lo siguiente:</p>
+<ol class="simple">
+<li><p>Abrir el lanzador de JupyterLab. Para esto seleccionar desde la barra de menú de la aplicación <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">New</span> <span class="pre">Launcher</span></code>. Deberías ver ahora las al menos algo similar a esta figura (con menos opciones):</p></li>
+</ol>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../../_images/JupyterLabLauncher.png"><img alt="JupyterLabLauncher" src="../../_images/JupyterLabLauncher.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Figura 1 </span><span class="caption-text">Lanzador de JupyterLab</span><a class="headerlink" href="#id1" title="Enlace permanente a esta imagen">¶</a></p>
+</div>
+<ol class="simple">
+<li><p>En la ventana que aparece, seleccionar la opción Python3 (ipykernel), puede ser tanto la que se encuentra debajo de <code class="docutils literal notranslate"><span class="pre">Notebook</span></code> como la que se encuentra debajo de <code class="docutils literal notranslate"><span class="pre">Console</span></code>.</p></li>
+<li><p>Se deberá ejecutar el siguiente comando:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install jupyterlab-myst jupytext
+</pre></div>
+</div>
+<p>Tanto en consola como en un cuaderno copiar y pegar el comando anterior y presionar <code class="docutils literal notranslate"><span class="pre">Mayúscula</span> <span class="pre">+</span> <span class="pre">Enter</span></code>.
+4. Cerrar la consola o el cuaderno y comenzar a utilizar la aplicación.</p>
+<p>Recordar que una vez abierto el cuaderno con que el se quiere trabajar se debe seleccionar el kernel <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span> <span class="pre">(eecc)</span></code>, ya que este kernel es el que tiene todas las herramientas de la materia. Esto se hace haciendo click en el recuadro rojo que se muestra en la figura:</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../_images/KernelSelect.png"><img alt="KernelSelect" src="../../_images/KernelSelect.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Figura 2 </span><span class="caption-text">Selector de Kernel en JupyterLab</span><a class="headerlink" href="#id2" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 </div>

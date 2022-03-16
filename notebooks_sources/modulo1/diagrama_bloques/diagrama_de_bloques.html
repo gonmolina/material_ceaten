@@ -87,7 +87,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://gonmolina.github.io/git material_ceaten/notebooks_sources/modulo1/diagrama_bloques/diagrama_de_bloques.html" />
@@ -510,7 +510,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>En la siguiente figura podemos ver el diagrama de bloques genérico del sistema de control realimentado.</p>
 <div class="figure align-center" id="diagrama-general">
 <a class="reference internal image-reference" href="../../../_images/fig1.png"><img alt="Diagrama de control general de sistema controlado" src="../../../_images/fig1.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 14 </span><span class="caption-text">Diagrama de control general de sistema controlado</span><a class="headerlink" href="#diagrama-general" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 16 </span><span class="caption-text">Diagrama de control general de sistema controlado</span><a class="headerlink" href="#diagrama-general" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Decimos que este sistema está realimentado, por que podemos ver que usamos la salida, que para este caso en particular es la medición de temperatura, para calcular y/o modificar la entrada al sistema. En este diagrama de bloques el resultado del sensor de salida se compara, mediante una resta con el sensor de la referencia.</p>
 <div class="section" id="ejemplo-de-sistema-de-control-representado-por-diagrama-de-bloques">
@@ -518,7 +518,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Sn la siguiente figura mostramos como ejemplo de diagrama de bloques el sistema de control de una caldera controlado por un termostato.</p>
 <div class="figure align-center" id="control-general">
 <a class="reference internal image-reference" href="../../../_images/fig2.png"><img alt="Sistema de control general" src="../../../_images/fig2.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Figura 15 </span><span class="caption-text">Diagrama de control de temperatura</span><a class="headerlink" href="#control-general" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 17 </span><span class="caption-text">Diagrama de control de temperatura</span><a class="headerlink" href="#control-general" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 </div>
@@ -535,7 +535,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Bloques en serie<a class="headerlink" href="#bloques-en-serie" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="figure align-center" id="bloques-serie">
 <img alt="BLoques en serie" src="../../../_images/fig3.png" />
-<p class="caption"><span class="caption-number">Figura 16 </span><span class="caption-text">Bloques en serie</span><a class="headerlink" href="#bloques-serie" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 18 </span><span class="caption-text">Bloques en serie</span><a class="headerlink" href="#bloques-serie" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="math notranslate nohighlight">
 \[ G(s) = \frac{Y(s)}{U(s)} = \frac{G2(s).X(s)}{U(s)} = \frac{G2(s).(G1(s).U(s))}{U(s)} = {G1(s).G2(s)} \]</div>
@@ -544,7 +544,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>Bloques en paralelo<a class="headerlink" href="#bloques-en-paralelo" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="figure align-center" id="bloques-paralelo">
 <img alt="Bloques en paralelo" src="../../../_images/fig4.png" />
-<p class="caption"><span class="caption-number">Figura 17 </span><span class="caption-text">Bloques en serie</span><a class="headerlink" href="#bloques-paralelo" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 19 </span><span class="caption-text">Bloques en serie</span><a class="headerlink" href="#bloques-paralelo" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="math notranslate nohighlight">
 \[ G = \frac{Y(s)}{U(s)} = \frac{X1(s)+X2(s)}{U(s)} = \frac{G1(s).U(s)+G2(s).U(s)}{U(s)} = \frac{(G1(s)+G2(s)).U(s)}{U(s)} = G1(s) + G2(s) \]</div>
@@ -561,14 +561,14 @@ const thebe_selector_output = ".output, .cell_output"
 \[G = \frac{Y(s)}{U(s)} =\frac{G1(s)}{(1+G1(s).G2(s))}\]</div>
 <div class="figure align-center" id="bloques-realimentados">
 <img alt="Bloques realimentados" src="../../../_images/fig5.png" />
-<p class="caption"><span class="caption-number">Figura 18 </span><span class="caption-text">Bloques realimentados</span><a class="headerlink" href="#bloques-realimentados" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 20 </span><span class="caption-text">Bloques realimentados</span><a class="headerlink" href="#bloques-realimentados" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="otras-transformaciones-utiles-en-el-algebra-de-diagramas-de-bloque">
 <h3>Otras transformaciones útiles en el algebra de diagramas de bloque<a class="headerlink" href="#otras-transformaciones-utiles-en-el-algebra-de-diagramas-de-bloque" title="Enlazar permanentemente con este título">¶</a></h3>
 <div class="figure align-center" id="transformaciones-utiles">
 <img alt="transformaciones útiles" src="../../../_images/fig6.png" />
-<p class="caption"><span class="caption-number">Figura 19 </span><span class="caption-text">Transformaciones útiles</span><a class="headerlink" href="#transformaciones-utiles" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 21 </span><span class="caption-text">Transformaciones útiles</span><a class="headerlink" href="#transformaciones-utiles" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 </div>
 <div class="section" id="ejemplo-de-diagrama-de-bloques">
@@ -576,18 +576,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Tenemos el diagrama de bloques de la figura, el cual queremos reducir.</p>
 <div class="figure align-center" id="ejemplo1">
 <img alt="ejemplo" src="../../../_images/fig7.png" />
-<p class="caption"><span class="caption-number">Figura 20 </span><span class="caption-text">Ejemplo de simplificación de diagrama de bloques</span><a class="headerlink" href="#ejemplo1" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 22 </span><span class="caption-text">Ejemplo de simplificación de diagrama de bloques</span><a class="headerlink" href="#ejemplo1" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="section" id="resolucion-a-mano">
 <h4>Resolución a mano<a class="headerlink" href="#resolucion-a-mano" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>En las siguientes dos figuras mostramos dos reducciones sucesivas al diagrama del ejemplo.</p>
 <div class="figure align-center" id="primer-paso">
 <img alt="primer-paso" src="../../../_images/fig8.png" />
-<p class="caption"><span class="caption-number">Figura 21 </span><span class="caption-text">Primer paso de simplificación</span><a class="headerlink" href="#primer-paso" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 23 </span><span class="caption-text">Primer paso de simplificación</span><a class="headerlink" href="#primer-paso" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <div class="figure align-center" id="segundo-paso">
 <img alt="segundo-paso" src="../../../_images/fig9.png" />
-<p class="caption"><span class="caption-number">Figura 22 </span><span class="caption-text">Segundo paso de simplificación</span><a class="headerlink" href="#segundo-paso" title="Enlace permanente a esta imagen">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 24 </span><span class="caption-text">Segundo paso de simplificación</span><a class="headerlink" href="#segundo-paso" title="Enlace permanente a esta imagen">¶</a></p>
 </div>
 <p>Finalmente, en la siguiente figura obtenemos la función de transferencia <span class="math notranslate nohighlight">\(G(s) = \dfrac{Y(s)}{R(s)}\)</span>:</p>
 <div class="math notranslate nohighlight">
