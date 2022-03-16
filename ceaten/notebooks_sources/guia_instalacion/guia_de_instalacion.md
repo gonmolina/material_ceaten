@@ -73,3 +73,46 @@ Para algunas personas no habituadas a utilizar la consola de comandos esto puede
 1. Podemos también cambiar el ícono que se muestra en el escritorio. Para esto podemos descargar este [archivo](https://raw.githubusercontent.com/jupyter/design/master/logos/Favicon/favicon.ico) y luego continuamos la edición de las propiedades del enlace. Seleccionamos la opción `Cambiar icono` y seleccionamos el archivo que acabamos de descargar.
 
 Ahora deberíamos tener un acceso directo a Jupyter Lab en el escritorio. 
+
+## NUEVO! Aplicación JupyterLab de escritorio
+
+Recientemente se lanzó una nueva aplicación JupyterLab de escritorio. Esta aplicación crea un lanzador desde el menu de inicio en windows y se pueden abrir los Notebooks con esta aplicación directamente desde el explorador de archivos. Para instalarlos de debe descargar el siguiente [instalador](https://github.com/jupyterlab/jupyterlab-desktop/releases/latest/download/JupyterLab-Setup-Windows.exe) y ejecutarlo.
+
+Para poder visualizar correctamente los cuadernos del curso será necesario instalar dos paquetes de Python extra. Para esto, po única vez cuando se abra la aplicación JupyterLab se de hacer lo siguiente:
+
+1. Abrir el lanzador de JupyterLab. Para esto seleccionar desde la barra de menú de la aplicación `File > New Launcher`. Deberías ver ahora las al menos algo similar a esta figura (con menos opciones):
+```{figure} JupyterLabLauncher.png
+:width: 400px
+:align: center
+:alt: JupyterLabLauncher
+
+Lanzador de JupyterLab
+```
+2. En la ventana que aparece, seleccionar la opción Python3 (ipykernel), puede ser tanto la que se encuentra debajo de `Notebook` como la que se encuentra debajo de `Console`.
+3. Se deberá ejecutar el siguiente comando:
+```python
+!pip install jupyterlab-myst jupytext
+```
+Tanto en consola como en un cuaderno copiar y pegar el comando anterior y presionar `Mayúscula + Enter`.
+4. Cerrar la consola o el cuaderno y comenzar a utilizar la aplicación.
+
+Recordar que una vez abierto el cuaderno con que el se quiere trabajar se debe seleccionar el kernel `Python 3 (eecc)`, ya que este kernel es el que tiene todas las herramientas de la materia. Esto se hace haciendo click en el recuadro rojo que se muestra en la figura:
+
+```{figure} KernelSelect.png
+:width: 400px
+:align: center
+:alt: KernelSelect
+
+Selector de Kernel en JupyterLab
+```
+
+
+
+
+
+
+
+
+
+
+
